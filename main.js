@@ -12,10 +12,18 @@ let mainWindow;
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow({
+    width: 700,
+    height: 700,
+    frame: false,
+    transparent: true,
+    resizeable: false,
+    title: 'Minty  .JR',
+    icon: 'mintyjoon/mintyjrfinal.png',
+  });
 
   // and load the index.html of the app.
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/mintyjoon/mintyjr.html');
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -28,7 +36,7 @@ function createWindow () {
     mainWindow = null;
   });
 }
-
+app.commandLine.appendSwitch('enable-transparent-visuals');
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', createWindow);
