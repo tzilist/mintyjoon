@@ -1,5 +1,6 @@
 const face = document.getElementById('face');
 const freshen = document.getElementById('freshen');
+const minty = require('minty');
 
 freshen.addEventListener('click', () => {
   face.src = 'think.png';
@@ -17,4 +18,13 @@ freshen.addEventListener('click', () => {
     face.style.left = '210px';
     face.style.top = '25px';
   }, 1800);
+
+    const test = minty.wrap(
+    (function() {
+      editor.getValue();
+    })()
+);
+
+console.log(test);
+
 });

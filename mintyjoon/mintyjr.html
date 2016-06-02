@@ -79,7 +79,9 @@ box-sizing: 20px;border-radius:1px;
     -o-transform: skew(-32deg);
     transform: skew(-32deg);
 }
-
+#editor *{
+	font-family: monospace !important
+}
 
 </style>
 
@@ -89,6 +91,7 @@ box-sizing: 20px;border-radius:1px;
 </head>
 
 
+<body>
 
 <img src="melr.png" style="z-index:102;position:absolute;left:20px;top:25px;width:100px;height:125px;-webkit-app-region: drag;"></img>
 <img src="merr.png" style="z-index:102;position:absolute;left:595px;top:25px;width:100px;height:125px;-webkit-app-region: drag;"></img>
@@ -98,7 +101,6 @@ box-sizing: 20px;border-radius:1px;
 <img src="bowtilt.png" style="z-index:102;position:absolute;left:20px;top:25px;width:150px;height:150px;-webkit-app-region: drag;"></img>
 
   <div style="position:absolute;left:80px;top:60px;">
-<body>
 
 <img id="face" src="mface.png" style="z-index:101;position:absolute;left:210px;top:25px;width:120px;height:60px;"></img>
 
@@ -138,86 +140,14 @@ box-sizing: 20px;border-radius:1px;
 <div style="z-index:5;opacity:1;position:absolute;left:278px;top:517px;width:270px;height:30px;border-radius:5px;background-color:#414341;"></div>
 
 
-
-
-
-
 <div class="ScrollStyle">
   <div style="z-index:100;color:#414341;position:absolute;left:22px;top:106px;float:left;width:257px;height:439px;overflow-y:scroll;-webkit-app-region: no-drag;">
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-
+		<div id="editor" style="position:absolute;top:0;left:0;bottom:0;right:0;"></div>
 </div></div>
 
 <div style="z-index:100;color:#414341;position:absolute;left:285px;top:105px;float:left;width:257px;height:413px;overflow-y:scroll;-webkit-app-region: no-drag;">
 <div class="ScrollStyle">
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
-test</br>
+
 </div></div>
 
 
@@ -235,12 +165,21 @@ test</br>
 
 <div style="z-index:98;opacity:.75;position:absolute;left:279px;top:106px;width:219px;height:369px;padding:20px;border-radius:4px;border:2px solid #414341;font-size:100%;"></div>
 
-
+</div>
+<script src="face.js" charset="utf-8"></script>
+<script src="../ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+		editor.setOptions({
+  		fontFamily: "monospace",
+  		fontSize: "10pt"
+		});
+</script>
 </body>
 
-</div>
 
-<script src="face.js" charset="utf-8"></script>
 
 
 </html>
